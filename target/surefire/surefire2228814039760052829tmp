@@ -1,0 +1,7 @@
+#surefire
+#Mon May 27 22:10:14 CST 2013
+-Dhttp.proxyHost=127.0.0.1
+user.dir=F\:\\gae repository\\mopo-app\\mopo-app
+localRepository=C\:\\Users\\zezhou\\.m2\\repository
+-Dhttp.proxyPort=8087
+basedir=F\:\\gae repository\\mopo-app\\mopo-app
