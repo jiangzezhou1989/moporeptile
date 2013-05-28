@@ -22,9 +22,11 @@ import org.b3log.latke.util.Strings;
 @RequestProcessor
 public final class HelloProcessor {
 
-    private static final Logger LOGGER = Logger.getLogger(HelloProcessor.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(HelloProcessor.class
+            .getName());
 
-    @RequestProcessing(value = {"/", "/index", "/**/ant/*/path"}, method = HTTPRequestMethod.GET)
+    @RequestProcessing(value = { "/", "/index", "/**/ant/*/path" }, method = {
+            HTTPRequestMethod.GET, HTTPRequestMethod.POST })
     public void index(final HTTPRequestContext context) {
         LOGGER.entering(HelloProcessor.class.getSimpleName(), "index");
 
@@ -39,8 +41,10 @@ public final class HelloProcessor {
         LOGGER.exiting(HelloProcessor.class.getSimpleName(), "index");
     }
 
-    @RequestProcessing(value = "/greeting", method = {HTTPRequestMethod.GET, HTTPRequestMethod.POST})
-    public void greeting(final HTTPRequestContext context, final HttpServletRequest request) {
+    @RequestProcessing(value = "/greeting", method = { HTTPRequestMethod.GET,
+            HTTPRequestMethod.POST })
+    public void greeting(final HTTPRequestContext context,
+            final HttpServletRequest request) {
         final AbstractFreeMarkerRenderer render = new FreeMarkerRenderer();
         context.setRenderer(render);
 
