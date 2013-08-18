@@ -1,7 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
 	<groupId>org.mopo</groupId>
 	<artifactId>mopo-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -17,7 +16,8 @@
 		<freemarker-gae.version>2.3.19</freemarker-gae.version>
 		<maven-gae-plugin.version>0.9.5</maven-gae-plugin.version>
 		<gae.dev_sever.port>8080</gae.dev_sever.port>
-
+		<testng.version>6.1.1</testng.version>
+		<org.jsoup.version>1.7.2</org.jsoup.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -37,16 +37,19 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- <dependency> <groupId>com.google.gwt</groupId> <artifactId>gwt-user</artifactId> 
+			<version>2.5.1</version> </dependency> <dependency> <groupId>com.google.gwt</groupId> 
+			<artifactId>gwt-dev</artifactId> <version>2.5.1</version> </dependency> -->
 		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-user</artifactId>
-			<version>2.5.1</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.version}</version>
+			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
-			<groupId>com.google.gwt</groupId>
-			<artifactId>gwt-dev</artifactId>
-			<version>2.5.1</version>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>${org.jsoup.version}</version>
 		</dependency>
 
 		<dependency>
@@ -55,7 +58,12 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>${testng.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 
 		<dependency>
@@ -119,19 +127,19 @@
 				</configuration>
 			</plugin>
 			<plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.22</version>
-                <configuration>
-                    <stopKey>stop</stopKey>
-                    <stopPort>4500</stopPort>
-                    <webAppSourceDirectory>../src/main/webapp</webAppSourceDirectory>
-                    <classesDirectory>${basedir}/target/${project.build.finalName}/WEB-INF/classes</classesDirectory>
-                    <contextPath>/</contextPath>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.22</version>
+				<configuration>
+					<stopKey>stop</stopKey>
+					<stopPort>4500</stopPort>
+					<webAppSourceDirectory>../src/main/webapp</webAppSourceDirectory>
+					<classesDirectory>${basedir}/target/${project.build.finalName}/WEB-INF/classes</classesDirectory>
+					<contextPath>/</contextPath>
 
-                    <reload>manual</reload>
-                </configuration>
-            </plugin>
+					<reload>manual</reload>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>2.6</version>
@@ -148,7 +156,7 @@
 								<resource>
 									<directory>src/main/resources</directory>
 									<filtering>true</filtering>
-								</resource>								
+								</resource>
 							</resources>
 						</configuration>
 					</execution>

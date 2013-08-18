@@ -25,8 +25,8 @@
     Author: Liang Ding
 -->
 <appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
-    <application>hello</application>
-    <version>1</version>
+    <application>mopoapps</application>
+    <version>2</version>
     
     <sessions-enabled>true</sessions-enabled>
     
@@ -36,6 +36,61 @@
         <property name="java.util.logging.config.file" value="WEB-INF/classes/logging.properties" />
     </system-properties>
     
-    <static-files />
+    <static-files>
+        <include path="/favicon.ico" />
+        <include path="/favicon.png" />
+        <include path="/robots.txt" />
+        
+        <include path="/js/**.js" />
+        <include path="/js/**/*.js" />
+        <include path="/js/**.css" />
+        <include path="/js/**/*.css" />
+        <include path="/js/**.htm" />
+        <include path="/js/**/*.htm" />
+        <include path="/js/**.html" />
+        <include path="/js/**/*.html" />
+        <include path="/js/**.gif" />
+        <include path="/js/**/*.gif" />
+        <include path="/js/**.png" />
+        <include path="/js/**/*.png" />
+        <include path="/js/**.jpg" />
+        <include path="/js/**/*.jpg" />
+        
+        <include path="/skins/**.css" />
+        <include path="/skins/**/*.css" />
+        <include path="/skins/**.js" />
+        <include path="/skins/**/*.js" />
+        <include path="/skins/**.png" />
+        <include path="/skins/**/*.png" />
+        <include path="/skins/**.jpg" />
+        <include path="/skins/**/*.jpg" />
+        <include path="/skins/**.swf" />
+        <include path="/skins/**/*.swf" />
+        <include path="/skins/**.gif" />
+        <include path="/skins/**/*.gif" />
+        
+        <include path="/css/**.css" />
+        <include path="/css/**/*.css" />
+        
+       
+        
+         <include path="/jtable/**.css" />
+        <include path="/jtable/**/*.css" />
+        <include path="/jtable/**.js" />
+        <include path="/jtable/**/*.js" />
+        <include path="/jtable/**.png" />
+        <include path="/jtable/**/*.png" />
+        <include path="/jtable/**.jpg" />
+        <include path="/jtable/**/*.jpg" />
+        <include path="/jtable/**.swf" />
+        <include path="/jtable/**/*.swf" />
+        <include path="/jtable/**.gif" />
+        <include path="/jtable/**/*.gif" />
+        <include path="/jtable/**.html" />
+        <include path="/jtable/**/*.html" />
+        <include path="/jtable/**.htm" />
+        <include path="/jtable/**/*.htm" />
+  
+    </static-files>
 </appengine-web-app>
 
